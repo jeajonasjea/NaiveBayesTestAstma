@@ -4,7 +4,7 @@ import math
 
 
 def loadCsv(filename):
-    lines = csv.reader(open(filename, "C:\Users\jea10\PycharmProjects\naivebayes1\dataset"))
+    lines = csv.reader(open(filename, 'dataset'))
     dataset = list(lines)
     for i in range(len(dataset)):
         dataset[i] = [float(x) for x in dataset[i]]
@@ -25,7 +25,7 @@ def separateByClass(dataset):
     separated = {}
     for i in range(len(dataset)):
         vector = dataset[i]
-        if (vector[-1] not in separated):
+        if vector[-1] not in separated:
             separated[vector[-1]] = []
         separated[vector[-1]].append(vector)
     return separated
